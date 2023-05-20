@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+button {
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+  padding: 10px 20px;
+}
+
+button:focus {
+  animation: button-focus .2s ease-in-out;
+  background-color: rgb(0, 92, 0);
+}
+
+@keyframes button-focus {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.95);
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cell {
+  align-items: center;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100px;
+}
+
+.gameboard {
+  border: 1px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 300px;
+}
+
+h1 { 
+  margin: 0;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.player-o {
+  color: blue;
+}
+
+.player-x {
+  color: red;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.shape-0 {
+  border: 15px solid blue;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 90px;
+  width: 90px;
+}
+
+.shape-1 {
+  height: 90px;
+  position: relative;
+  transform: rotate(45deg);
+  width: 90px;
+}
+
+.shape-1::before, .shape-1::after {
+  background-color: red;
+  content: '';
+  position: absolute;
+}
+
+.shape-1::before {
+  height: 100%;
+  left: 50%;
+  margin-left: -15%;
+  width: 30%;
+}
+
+.shape-1::after {
+  height: 30%;
+  top: 50%;
+  margin-top: -15%;
+  width: 100%;
+}
+
+.winner-text {
+  animation: scale 1s ease-in-out .2s infinite alternate-reverse;
+  color: green;
+  font-size: 20px;
+  transform: scale(0);
+}
